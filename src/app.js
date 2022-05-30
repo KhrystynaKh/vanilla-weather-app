@@ -24,6 +24,24 @@ let time = (document.querySelector(
 //API weather key
 let apiKey = "86bca7e68a1bdf77956b5e4ed10598f5";
 
+//Weather update query selectors
+let searchCity = document.querySelector("#search-city");
+let curCity = document.querySelector("#current-city");
+let curTemp = document.querySelector("#current-temp");
+let curWeather = document.querySelector("#current-weather");
+let humidity = document.querySelector("#humidity");
+let wind = document.querySelector("#wind");
+let pressure = document.querySelector("#pressure");
+
+//Update values function
+function weatherUpdate(response) {
+  curCity.innerHTML = response.data.name;
+  curTemp.innerHTML = Math.round(response.data.main.temp);
+  curWeather.innerHTML = response.data.weather[0].main;
+  humidity.innerHTML = response.data.main.humidity;
+  wind.innerHTML = response.data.wind.speed.toFixed(1);
+}
+
 //weather by search
 function formSearch(event) {
   event.preventDefault();
