@@ -150,8 +150,14 @@ hr {
 }
 
 .focus {
+  width: 30px;
   color: #407088;
+  font-size: 200px;
+  size: 64px;
+  padding: 100px;
+  line-height: 1;
 }
+
 .temp-range {
   color: #407088;
 }
